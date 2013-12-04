@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IntraStore Notification System</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <!-- Le styles -->
+    <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; 
+      }
+      .container {
+        width: 300px;
+      }
+
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; 
+        -webkit-border-radius: 10px 10px 10px 10px;
+           -moz-border-radius: 10px 10px 10px 10px;
+                border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+
+	  .login-form {
+		margin-left: 65px;
+	  }
+	
+	  legend {
+		margin-right: -50px;
+		font-weight: bold;
+	  	color: #404040;
+	  }
+
+
+    </style>
+
+
+</head>
+<body>
+<div id="login">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="login-form">
+          <h2>Login</h2>
+          <form>
+            <fieldset>
+              <div class="clearfix">
+                <input type="text" id="username" name="username" placeholder="Username">
+              </div>
+              <div class="clearfix">
+                <input type="password"  id="password" name="password" placeholder="Password">
+              </div>
+ 
+             
+              <button id="btn_Submit" type="button" name="btn_Submit" class="btn btn-primary">Sign in</button>
+			               
+            </fieldset>
+          </form>
+		  <form id="login_form" action="/login/2">
+		   <button type="submit" id="btn_Reg" class="btn btn-success">Register now</button>
+        </form>
+		</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="Admin" hidden="true">
+  <table width="200" border="1">
+  <tr>
+  <form method="GET" action="/all/users/res">
+   
+   <div align="right">
+   <h5>Hi <label id="usrnm" name="usrnm">username</label> from <label id="deptnm" name="deptnm">department</label> department!!!</h5>
+  </div>
+  
+    <th scope="row"><input type="submit" name="Display Users" id="btn_usr" value="Users"></th>
+    <td>&nbsp;</td>
+    </form>
+  </tr>
+  <tr>
+    <th scope="row"><input type="button" name="button" id="button" value="Users By Dept"></th>
+    <td>&nbsp;</td>
+  </tr>
+    <tr>
+  <form>
+    <th scope="row"><input type="button" name="Person Notification" id="notifyPerson" value="Person Notification" onMouseDown="person.hidden=false"></th>
+    <td>&nbsp;</td>
+	</form>
+  </tr>
+  <tr>
+  <form>
+    <th scope="row"><input type="button" name="DeptWide Notification" id="notifyDept" value="DeptWide Notification" onMouseDown="deptWide.hidden=false"></th>
+    <td>&nbsp;</td>
+	</form>
+  </tr>
+  <tr>
+ <th scope="row"><input type="button" name="StoreWide Notification" id="notify"  value="StoreWide Notification" onMouseDown="streWide.hidden=false"></th>
+    <td>&nbsp;</td>
+  </tr>
+  
+</table>
+<br/>
+<br/>
+<br/>
+<div id="streWide" hidden="true">
+<form>
+<br/>
+<br/>
+<br/>
+<textarea name="msgReader" id="txtArea_Id">
+</textarea>
+<br/><br/>
+<br/>
+<button id="btn_Send" type="button" onclick="fireMe()">Send Message</button>
+</form>
+</div>
+<div id="deptWide" hidden="true">
+<form>
+<br/>
+<br/>
+<br/>
+<input type="text" name="dept_txt" id="txt_dept"/>
+<textarea name="deptmsgReader" id="depttxtArea_Id">
+</textarea>
+<br/><br/>
+<br/>
+<button id="deptbtn_Send" type="button" onclick="fireMeDept()">Send Message</button>
+</form>
+</div>
+<div id="person" hidden="true">
+<form>
+<br/>
+<br/>
+<br/>
+<input type="text" name="person_txt" id="txt_person"/>
+<textarea name="personmsgReader" id="persontxtArea_Id">
+</textarea>
+<br/><br/>
+<br/>
+<button id="deptbtn_Send" type="button" onclick="fireMePerson()">Send Message</button>
+</form>
+</div>
+
+
+  </div>
+     <!-- /container -->
+
+
+<!-- script tags -->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="//code.jquery.com/jquery.js"></script>
+            <script src="../assets/js/app.js"></script>
+			<script src="../assets/js/stomp.js"></script> 
+			<script src="../assets/js/pub_store.js"></script>
+			<script src="../assets/js/pub_dept.js"></script>
+			<script src="../assets/js/listener_person.js"></script> 
+			<script src="../assets/js/listener_dept.js"></script> 
+			<script src="../assets/js/pub_person.js"></script> 
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script> 
+</body>
+</html>

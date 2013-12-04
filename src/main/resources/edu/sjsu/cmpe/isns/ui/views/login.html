@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>login</title>
+</head>
+
+<body>
+<p>&lt;!DOCTYPE html&gt;<br>
+  &lt;html lang=&quot;en&quot;&gt;<br>
+  &lt;head&gt;<br>
+  &lt;meta charset=&quot;utf-8&quot;&gt;<br>
+  &lt;title&gt;Bootstrap, from Twitter&lt;/title&gt;<br>
+  &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;<br>
+  &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;<br>
+  &lt;script src=&quot;http://code.jquery.com/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;<br>
+  &lt;!-- Le styles --&gt;<br>
+  &lt;!--&lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;--&gt;<br>
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.css&quot;  type=&quot;text/css&quot;/&gt;<br>
+  &lt;style type=&quot;text/css&quot;&gt;<br>
+  /* Override some defaults */<br>
+  html, body {<br>
+  background-color: #eee;<br>
+  }<br>
+  body {<br>
+  padding-top: 40px; <br>
+  }<br>
+  .container {<br>
+  width: 300px;<br>
+  }</p>
+<p> /* The white background content wrapper */<br>
+  .container &gt; .content {<br>
+  background-color: #fff;<br>
+  padding: 20px;<br>
+  margin: 0 -20px; <br>
+  -webkit-border-radius: 10px 10px 10px 10px;<br>
+  -moz-border-radius: 10px 10px 10px 10px;<br>
+  border-radius: 10px 10px 10px 10px;<br>
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);<br>
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);<br>
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);<br>
+  }</p>
+<p> .login-form {<br>
+  margin-left: 65px;<br>
+  }<br>
+  <br>
+  legend {<br>
+  margin-right: -50px;<br>
+  font-weight: bold;<br>
+  color: #404040;<br>
+  }</p>
+<p> &lt;/style&gt;</p>
+<p>&lt;/head&gt;<br>
+  &lt;body&gt;<br>
+  &lt;div id=&quot;login&quot;&gt;<br>
+  &lt;div class=&quot;container&quot;&gt;<br>
+  &lt;div class=&quot;content&quot;&gt;<br>
+  &lt;div class=&quot;row&quot;&gt;<br>
+  &lt;div class=&quot;login-form&quot;&gt;<br>
+  &lt;h2&gt;Login&lt;/h2&gt;<br>
+  &lt;form&gt;<br>
+  &lt;fieldset&gt;<br>
+  &lt;div class=&quot;clearfix&quot;&gt;<br>
+  &lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Username&quot;&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div class=&quot;clearfix&quot;&gt;<br>
+  &lt;input type=&quot;password&quot;  id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;<br>
+  &lt;/div&gt;<br>
+  <br>
+  <br>
+  &lt;button id=&quot;btn_Submit&quot; type=&quot;button&quot; name=&quot;btn_Submit&quot; class=&quot;btn btn-primary&quot;&gt;Sign in&lt;/button&gt;<br>
+  &lt;button type=&quot;submit&quot; id=&quot;btn_Reg&quot; class=&quot;btn btn-success&quot;&gt;Register now&lt;/button&gt;<br>
+  &lt;/fieldset&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div id=&quot;Admin&quot; hidden=&quot;true&quot;&gt;<br>
+  &lt;table width=&quot;200&quot; border=&quot;1&quot;&gt;<br>
+  &lt;tr&gt;<br>
+  &lt;form method=&quot;GET&quot; action=&quot;/all/users/res&quot;&gt;<br>
+  &lt;th scope=&quot;row&quot;&gt;&lt;input type=&quot;submit&quot; name=&quot;Display Users&quot; id=&quot;btn_usr&quot; value=&quot;Users&quot;&gt;&lt;/th&gt;<br>
+  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+  &lt;th scope=&quot;row&quot;&gt;&lt;input type=&quot;button&quot; name=&quot;button&quot; id=&quot;button&quot; value=&quot;Users By Dept&quot;&gt;&lt;/th&gt;<br>
+  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+  &lt;form&gt;<br>
+  &lt;th scope=&quot;row&quot;&gt;&lt;input type=&quot;button&quot; name=&quot;Person Notification&quot; id=&quot;notifyPerson&quot; value=&quot;Person Notification&quot; onMouseDown=&quot;person.hidden=false&quot;&gt;&lt;/th&gt;<br>
+  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+  &lt;form&gt;<br>
+  &lt;th scope=&quot;row&quot;&gt;&lt;input type=&quot;button&quot; name=&quot;DeptWide Notification&quot; id=&quot;notifyDept&quot; value=&quot;DeptWide Notification&quot; onMouseDown=&quot;deptWide.hidden=false&quot;&gt;&lt;/th&gt;<br>
+  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+  &lt;th scope=&quot;row&quot;&gt;&lt;input type=&quot;button&quot; name=&quot;StoreWide Notification&quot; id=&quot;notify&quot;  value=&quot;StoreWide Notification&quot; onMouseDown=&quot;streWide.hidden=false&quot;&gt;&lt;/th&gt;<br>
+  &lt;td&gt;&amp;nbsp;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+  <br>
+  &lt;/table&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;div id=&quot;streWide&quot; hidden=&quot;true&quot;&gt;<br>
+  &lt;form&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;textarea name=&quot;msgReader&quot; id=&quot;txtArea_Id&quot;&gt;<br>
+  &lt;/textarea&gt;<br>
+  &lt;br/&gt;&lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;button id=&quot;btn_Send&quot; type=&quot;button&quot; onclick=&quot;fireMe()&quot;&gt;Send Message&lt;/button&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div id=&quot;deptWide&quot; hidden=&quot;true&quot;&gt;<br>
+  &lt;form&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;input type=&quot;text&quot; name=&quot;dept_txt&quot; id=&quot;txt_dept&quot;/&gt;<br>
+  &lt;textarea name=&quot;deptmsgReader&quot; id=&quot;depttxtArea_Id&quot;&gt;<br>
+  &lt;/textarea&gt;<br>
+  &lt;br/&gt;&lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;button id=&quot;deptbtn_Send&quot; type=&quot;button&quot; onclick=&quot;fireMeDept()&quot;&gt;Send Message&lt;/button&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div id=&quot;person&quot; hidden=&quot;true&quot;&gt;<br>
+  &lt;form&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;input type=&quot;text&quot; name=&quot;person_txt&quot; id=&quot;txt_person&quot;/&gt;<br>
+  &lt;textarea name=&quot;personmsgReader&quot; id=&quot;persontxtArea_Id&quot;&gt;<br>
+  &lt;/textarea&gt;<br>
+  &lt;br/&gt;&lt;br/&gt;<br>
+  &lt;br/&gt;<br>
+  &lt;button id=&quot;deptbtn_Send&quot; type=&quot;button&quot; onclick=&quot;fireMePerson()&quot;&gt;Send Message&lt;/button&gt;<br>
+  &lt;/form&gt;<br>
+  &lt;/div&gt;</p>
+<p> &lt;/div&gt;<br>
+  &lt;!-- /container --&gt;</p>
+<p> &lt;!-- script tags --&gt;<br>
+  &lt;!-- jQuery (necessary for Bootstrap's JavaScript plugins) --&gt;<br>
+  &lt;script src=&quot;//code.jquery.com/jquery.js&quot;&gt;&lt;/script&gt;<br>
+  &lt;script src=&quot;../assets/js/app.js&quot;&gt;&lt;/script&gt;<br>
+  &lt;script src=&quot;../assets/js/stomp.js&quot;&gt;&lt;/script&gt; <br>
+  &lt;script src=&quot;../assets/js/pub_store.js&quot;&gt;&lt;/script&gt;<br>
+  <br>
+  &lt;script src=&quot;../assets/js/listener_person.js&quot;&gt;&lt;/script&gt; <br>
+  &lt;script src=&quot;../assets/js/pub_person.js&quot;&gt;&lt;/script&gt; <br>
+  &lt;!-- Latest compiled and minified JavaScript --&gt;<br>
+  &lt;script src=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot;&gt; &lt;/script&gt; <br>
+  &lt;/body&gt;<br>
+  &lt;/html&gt;</p>
+</body>
+</html>
