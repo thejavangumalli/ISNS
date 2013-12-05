@@ -106,5 +106,37 @@ $("#personbtn_Send").click(function() {
     });
 });
 
-$("#btn_Reg").click(function() { $("#login_form").attr("action","/register"); }); $("#reg_Submit").click(function() { //var isbn = this.id; var user= $("#username").val(); var pass=$("#password").val(); var fname=$("#firstname").val(); var lname=$("#lastname").val(); var email=$("#email").val(); var phno=$("#phno").val(); var dept=$("#dept").val(); alert('in ajax'); $.ajax({ url: "v1/users", type: 'POST', async: 'false', data:'username='+user+'&password='+pass+'&firstname='+fname+'&lastname='+lname+'&email='+email+'&phno='+phno+'&dept='+dept, contentType: 'application/x-www-form-urlencoded', success: function(response) { }, error: function(data,status,er){ alert("You are Successfully Registered!"); }); });
 
+$("#btn_Reg").click(function() {
+	
+	$("#login_form").attr("action","/register");
+	
+});
+
+
+$("#reg_Submit").click(function() {
+    //var isbn = this.id;
+	var user= $("#username").val();
+	var pass=$("#password").val();
+	var fname=$("#firstname").val();
+	var lname=$("#lastname").val();
+	var email=$("#email").val();
+	var phno=$("#phno").val();
+	var dept=$("#dept").val();	
+    alert('in ajax');
+    $.ajax({
+    url: "v1/users",
+    type: 'POST',
+    async: 'false',
+    data:'username='+user+'&password='+pass+'&firstname='+fname+'&lastname='+lname+'&email='+email+'&phno='+phno+'&dept='+dept,
+    contentType: 'application/x-www-form-urlencoded',
+    success: function(response) {
+   
+   
+    },
+    error: function(data,status,er){
+    	
+    	 alert("You are Successfully  Registered!");
+    	
+    });
+});
