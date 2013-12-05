@@ -11,7 +11,7 @@ public class AwsEmail {
     
 
    public AwsEmail(ArrayList<String> emails, String body) throws Exception {
-    	String FROM = "theja.vangumalli@gmail.com";   // Replace with your "From" address. This address must be verified.
+    	String FROM = "vth3ja@gmail.com";   // Replace with your "From" address. This address must be verified.
         String[] TO = new String[emails.size()];  // Replace with a "To" address. If you have not yet requested
         TO=emails.toArray(TO);                                                   // production access, this address must be verified.
         
