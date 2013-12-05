@@ -2,21 +2,19 @@ function deptClicked(){
 $("#deptWide").show();
 $("#streWide").hide();
 $("#person").hide();
-
-setTimeout("fireWater2()",5000);
 }
 function personClicked(){
 	$("#deptWide").hide();
 	$("#streWide").hide();
 	$("#person").show();
-	//setTimeout("fireWater()",5000);
+	
 	
 	}
 function storeClicked(){
 	$("#deptWide").hide();
 	$("#streWide").show();
 	$("#person").hide();
-	//setTimeout("storeListener()",5000);
+	
 	
 	}
 	
