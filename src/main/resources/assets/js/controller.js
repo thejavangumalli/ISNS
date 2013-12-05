@@ -30,7 +30,7 @@ function deleteUser(){
 	 async: 'false',
 	 contentType: 'application/x-www-form-urlencoded',
 	 success: function(response) {
-	 alert("You are Successfully  Deleted!");
+	 alert("You have Successfully  Deleted!");
 		window.location.reload();
 	 },
 	 error: function(data,status,er){
