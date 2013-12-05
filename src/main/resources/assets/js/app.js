@@ -137,6 +137,7 @@ $("#reg_Submit").click(function() {
     error: function(data,status,er){
     	
     	 alert("You are Successfully  Registered!");
+    }
     	
     });
 });
