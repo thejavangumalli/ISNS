@@ -8,7 +8,7 @@ function fireWater() {
         if (location.port == 9001) {
         	
         		var userNm=document.getElementById("username").value;
-            var destination4 = "/queue/isns.person."+userNm;
+            var destination4 = "/topic/isns.person."+userNm;
        
 
         client = Stomp.client(url, "stomp");
