@@ -1,27 +1,4 @@
-/*$("#btn_Submit").click(function(){
 
-          alert("Please Invoke Me!!!"+ $("#username").val()+""+$("#password").val());
-          $.ajax({
-        	  type:        "POST",
-              url:         "http://localhost:8080/isns/v1/users/login",
-  		    contentType: "application/json; charset=utf-8",
-  			data:        JSON.stringify({ username: $("#username").val(),
-                                            password: $("#password").val()
-                                            
-                                          }),
-              success:     function(){
-                  alert("You are logged  in!");
-              },
-          error:function() 
-			{
-	  alert("You are not logged  in!");
-			}
-                                          
-            });
-        });
-	  data:        JSON.stringify({ username: $("#username").val(),
-        				password: $("#password").val()
-		*/
 $("#btn_Submit").click(function() {
     //var isbn = this.id;
 	var user= $("#username").val();
@@ -123,7 +100,7 @@ $("#reg_Submit").click(function() {
 	var email=$("#email").val();
 	var phno=$("#phno").val();
 	var dept=$("#dept").val();	
-    alert('in ajax');
+   
     $.ajax({
     url: "v1/users",
     type: 'POST',
