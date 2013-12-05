@@ -22,7 +22,7 @@ function storeClicked(){
 	
 function deleteUser(){
 	var lname = document.getElementById("usernameDelete").value;
-	alert(lname);
+	alert(lname + " is about to be deleted");
 	var URL = "/v1/users/all/users/v1/delete/"+lname;
 	 $.ajax({
 	 url: URL,
