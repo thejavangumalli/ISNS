@@ -19,6 +19,29 @@ function storeClicked(){
 	//setTimeout("storeListener()",5000);
 	
 	}
+	
+function deleteUser(){
+	var lname = document.getElementById("usernameDelete").value;
+	alert(lname);
+	var URL = "/v1/users/all/users/v1/delete/"+lname;
+	 $.ajax({
+	 url: URL,
+	 type: 'DELETE',
+	 async: 'false',
+	 contentType: 'application/x-www-form-urlencoded',
+	 success: function(response) {
+	 alert("You are Successfully  Deleted!");
+		window.location.reload();
+	 },
+	 error: function(data,status,er){
+	 	
+	 	
+	 	alert("Unable to Delete at this moment!!!");
+	 	}
+
+	});
+}	
+	
 function searchUserByDept(){
 
 	var dname = $('#deptnm').text();
