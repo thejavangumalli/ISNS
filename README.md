@@ -1,21 +1,20 @@
-RESTful Library Service
-======================
+RESTful Intra Store Notification System
+=======================================
 
 $ mvn clean package
 
-# To launch Library A instance
-$ java -jar target/library-0.0.1-SNAPSHOT.jar server config/library_a_config.yml 
+# To launch admin instance
+$ java -jar target/ISNS-0.0.1-SNAPSHOT.jar server config/intra_store_notification.yml 
 
-# To launch Library B instance
+# To launch client instance
 $ java -jar target/library-0.0.1-SNAPSHOT.jar server config/library_b_config.yml 
 
-# How to run this Java process forever
-$ nohup ./bin/library_a.sh 0<&- &> /tmp/app-a.log &
-$ nohup ./bin/library_b.sh 0<&- &> /tmp/app-b.log &
 
 Service endpoint: 
-http://localhost:8001/library/v1
-http://localhost:8002/library/v1
+admin port   http://localhost:8080
+Client       http://localhost:9001
 
 Admin: http://localhost:8081/
+
+Refer https://docs.google.com/document/d/1vsWqgWh98hdGp4cZAhtK6X6tsG8yLKfQY_GwGMLN2k0/edit?usp=sharing for how to.
 
